@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rhodirish-afk.github.io/the-first-pint/sitemap.xml
