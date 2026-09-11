@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 160" role="img" aria-labelledby="tpTitle">
+  <title id="tpTitle">A third of a pint</title>
+  <path d="M28 28 L36 140 H84 L92 28 Z" fill="#fffaf3" stroke="#3a2e26" stroke-width="3"/>
+  <path d="M32 55 L38 136 H82 L88 55 Z" fill="#c47a2a"/>
+  <ellipse cx="60" cy="55" rx="28" ry="7" fill="#f0c98a"/>
+  <ellipse cx="60" cy="52" rx="22" ry="4" fill="#fffaf3" opacity="0.55"/>
+  <path d="M42 75 q10 -6 18 0 q8 6 18 0" fill="none" stroke="#8f5318" stroke-width="1.5" opacity="0.4"/>
+  <path d="M44 95 q8 -4 16 0" fill="none" stroke="#8f5318" stroke-width="1" opacity="0.3"/>
+  <!-- foam rim -->
+  <path d="M32 55 q7 -10 14 -2 q6 -8 14 0 q7 -9 14 2" fill="#fffaf3"/>
+</svg>

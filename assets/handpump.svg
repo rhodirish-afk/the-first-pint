@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 360" role="img" aria-labelledby="hpTitle hpDesc">
+  <title id="hpTitle">Handpump</title>
+  <desc id="hpDesc">A warm alehouse handpump with a third-pint glass of cask ale</desc>
+  <!-- bar top -->
+  <rect x="20" y="300" width="240" height="28" rx="3" fill="#3a2e26"/>
+  <rect x="20" y="300" width="240" height="8" fill="#5a4638"/>
+  <!-- pump body -->
+  <rect x="118" y="168" width="44" height="132" rx="4" fill="#8f5318"/>
+  <rect x="122" y="172" width="36" height="124" rx="3" fill="#c47a2a"/>
+  <rect x="128" y="180" width="24" height="8" rx="1" fill="#f0c98a" opacity="0.5"/>
+  <!-- spout -->
+  <path d="M162 210 h28 a8 8 0 0 1 8 8 v18 h-10 v-12 a4 4 0 0 0-4-4 h-22 z" fill="#6b3a14"/>
+  <ellipse cx="193" cy="238" rx="6" ry="4" fill="#5a4638"/>
+  <!-- drip of ale -->
+  <ellipse cx="193" cy="248" rx="3" ry="5" fill="#c47a2a" opacity="0.85"/>
+  <!-- handle shaft -->
+  <rect x="132" y="95" width="16" height="80" rx="3" fill="#2a241c"/>
+  <rect x="134" y="95" width="6" height="80" fill="#5a4638" opacity="0.4"/>
+  <!-- handle grip -->
+  <ellipse cx="140" cy="78" rx="28" ry="22" fill="#1c1410"/>
+  <ellipse cx="140" cy="74" rx="22" ry="16" fill="#3a2e26"/>
+  <ellipse cx="140" cy="70" rx="14" ry="10" fill="#c47a2a"/>
+  <ellipse cx="136" cy="66" rx="6" ry="4" fill="#f0c98a" opacity="0.45"/>
+  <!-- badge plate -->
+  <rect x="124" y="230" width="32" height="22" rx="2" fill="#ebe1d0"/>
+  <rect x="126" y="232" width="28" height="18" rx="1" fill="#f7f0e4"/>
+  <text x="140" y="245" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#6b3a14" font-weight="700">1st</text>
+  <!-- glass (third) -->
+  <path d="M198 268 L206 300 H248 L256 268 Z" fill="#fffaf3" stroke="#d4c4ae" stroke-width="2"/>
+  <path d="M202 278 L208 298 H246 L252 278 Z" fill="#c47a2a" opacity="0.9"/>
+  <ellipse cx="227" cy="278" rx="25" ry="5" fill="#f0c98a" opacity="0.55"/>
+  <path d="M210 286 q8 -4 16 0 q8 4 16 0" fill="none" stroke="#8f5318" stroke-width="1" opacity="0.35"/>
+</svg>

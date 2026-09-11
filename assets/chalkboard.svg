@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="cbTitle">
+  <title id="cbTitle">Chalkboard</title>
+  <rect x="8" y="8" width="304" height="164" rx="6" fill="#5a4638"/>
+  <rect x="18" y="18" width="284" height="144" rx="3" fill="#2a241c"/>
+  <!-- chalk dust texture hints -->
+  <circle cx="40" cy="40" r="1.2" fill="#ebe1d0" opacity="0.15"/>
+  <circle cx="280" cy="50" r="1" fill="#ebe1d0" opacity="0.12"/>
+  <circle cx="60" cy="140" r="1.5" fill="#ebe1d0" opacity="0.1"/>
+  <circle cx="250" cy="130" r="1" fill="#ebe1d0" opacity="0.14"/>
+  <text x="160" y="78" text-anchor="middle" font-family="Georgia, 'Comic Sans MS', cursive" font-size="22" fill="#f7f0e4" letter-spacing="1">first pint?</text>
+  <text x="160" y="118" text-anchor="middle" font-family="Georgia, 'Comic Sans MS', cursive" font-size="20" fill="#f0c98a" letter-spacing="0.5">ask for a third</text>
+  <!-- chalk ledge -->
+  <rect x="14" y="158" width="292" height="8" rx="1" fill="#8f5318"/>
+  <rect x="120" y="160" width="40" height="4" rx="1" fill="#ebe1d0" opacity="0.7"/>
+</svg>
