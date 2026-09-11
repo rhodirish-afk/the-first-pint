@@ -5,12 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The First Pint — real ale for 18–30s</title>
   <meta name="description" content="Real ale for 18–30s, and anyone who has never tried it. A third of a pint. No lecture.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The First Pint — real ale for 18–30s">
+  <meta property="og:description" content="Real ale for 18–30s, and anyone who has never tried it. A third of a pint. No lecture.">
+  <meta property="og:url" content="https://rhodirish-afk.github.io/the-first-pint/">
+  <meta property="og:image" content="https://rhodirish-afk.github.io/the-first-pint/assets/og-image.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The First Pint — real ale for 18–30s">
+  <meta name="twitter:description" content="Real ale for 18–30s, and anyone who has never tried it. A third of a pint. No lecture.">
+  <meta name="twitter:image" content="https://rhodirish-afk.github.io/the-first-pint/assets/og-image.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="site-header-inner">
       <p class="site-title"><a href="index.html">The First Pint</a></p>
@@ -24,10 +36,17 @@
     </div>
   </header>
 
-  <main>
-    <p class="tagline">A campaign, not a lecture</p>
-    <h1>The First Pint</h1>
-    <p class="lede">Real ale for 18–30s, and anyone who has never tried it. A third of a pint. No lecture.</p>
+  <main id="main">
+    <div class="hero">
+      <div class="hero-copy">
+        <p class="tagline">A campaign, not a lecture</p>
+        <h1>The First Pint</h1>
+        <p class="lede">Real ale for 18–30s, and anyone who has never tried it. A third of a pint. No lecture.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img src="assets/handpump.svg" width="280" height="360" alt="">
+      </div>
+    </div>
 
     <p>Most people under thirty have never had a pint of real ale. Not because they rejected it. Because nobody offered them one that wasn’t warm, tired, or served with a lecture.</p>
     <p>That is a failure of the trade, not of the generation.</p>
@@ -35,25 +54,43 @@
     <p><strong>The job is simple. Get the first pint right. Then they will come back.</strong></p>
 
     <div class="ask-box">
+      <p class="section-label">The ask</p>
       <h2>What we are asking</h2>
       <p>If you have never tried cask ale, walk into a pub that keeps it well and ask for a <strong>third</strong> of whatever is on the hand pump. If you are a publican, pour that third without rolling your eyes. If you are CAMRA, help us find the pubs and the people who will do it properly.</p>
     </div>
 
     <div class="cta-box">
-      <h2>Start here: a third at The Vine</h2>
+      <p class="section-label">Start here</p>
+      <h2>A third at The Vine</h2>
       <p>During Cask Ale Week — and any week after that — come to <strong>The Vine Inn, 11 Abingdon Road, Cumnor</strong>, and ask for a first-pint third. We will pour whatever is in best condition that day and tell you what it is without a sermon.</p>
-      <p>
+      <div class="btn-row">
         <a class="btn" href="join.html">Get in touch</a>
         <a class="btn btn-ghost" href="about.html">What it actually is</a>
-      </p>
+      </div>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="site-footer-inner">
-      <p><strong>The First Pint</strong> · <a href="mailto:myone_ie@hotmail.co.uk">myone_ie@hotmail.co.uk</a> · <a href="tel:+447752144777">07752 144777</a></p>
-      <p>The Vine Inn, 11 Abingdon Road, Cumnor</p>
-      <p class="fine">Campaign copy by <a href="https://roryhanrahan.co.uk/first-pint.html">Rory Hanrahan</a></p>
+      <div>
+        <p class="footer-brand">The First Pint</p>
+        <div class="contact-block">
+          <p><a href="mailto:myone_ie@hotmail.co.uk">myone_ie@hotmail.co.uk</a></p>
+          <p><a href="tel:+447752144777">07752 144777</a></p>
+          <p>The Vine Inn, 11 Abingdon Road, Cumnor</p>
+        </div>
+      </div>
+      <div>
+        <p class="section-label" style="color:#f0c98a;margin-bottom:0.5rem;">Pages</p>
+        <ul class="footer-nav">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="pubs.html">For pubs</a></li>
+          <li><a href="camra.html">For CAMRA</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </div>
+      <p class="fine">Campaign copy by <a href="https://roryhanrahan.co.uk/first-pint.html">Rory Hanrahan</a>. Illustrations are original SVG for this site.</p>
     </div>
   </footer>
 </body>
