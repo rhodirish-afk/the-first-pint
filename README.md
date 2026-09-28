@@ -14,13 +14,17 @@ Source campaign copy: [roryhanrahan.co.uk/first-pint.html](https://roryhanrahan.
 - `camra.html` — what we ask of CAMRA
 - `join.html` — contact and invites
 - `css/styles.css` — shared warm alehouse styles
-- `assets/` — original SVG illustrations + OG image (`og-image.svg`; PNG preferred but MCP text push cannot preserve binary)
+- `assets/` — original SVG illustrations, `favicon.svg`, and the social share image: `og-image.svg` (source) and `og-image.png` (1200×630, rendered from the SVG; this is what `og:image` points to)
 
-All internal links are relative so project Pages at `/the-first-pint/` works.
+All internal links are relative so project Pages at `/the-first-pint/` works. Canonical, `og:url` and `sitemap.xml` use the absolute project URL.
+
+### Regenerating the share image
+
+Edit `assets/og-image.svg`, then render it to a 1200×630 PNG (for example: open the SVG in Chrome at 1200×630 and screenshot, or `rsvg-convert -w 1200 -h 630 assets/og-image.svg -o assets/og-image.png`). Upload the PNG as a binary file — the GitHub web uploader or `git push` both work; text-only API pushes corrupt it.
 
 ## Artwork
 
-Illustrations in `assets/` (handpump, third-pint glass, cask, chalkboard, OG art) are **original SVG** drawn for this campaign. No stock photos.
+Illustrations in `assets/` (handpump, third-pint glass, cask, chalkboard, favicon, OG art) are **original SVG** drawn for this campaign. No stock photos.
 
 ## Enable GitHub Pages
 
