@@ -1,0 +1,56 @@
+name: Build OG PNG (one-off, PR branch only)
+# Temporary: renders assets/og-image.svg to assets/og-image.png on the
+# quality-pass-2026-09 branch and removes the unused assets/_probe.png.
+# Never runs on main. This file is deleted from the branch once the PNG is committed.
+on:
+  push:
+    branches: [quality-pass-2026-09]
+    paths:
+      - '.github/workflows/build-og-png.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    if: github.ref == 'refs/heads/quality-pass-2026-09'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install renderer and fonts
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin fonts-noto-core
+          mkdir -p ~/.local/share/fonts
+          curl -fsSL -o ~/.local/share/fonts/Gelasio.ttf "https://raw.githubusercontent.com/google/fonts/main/ofl/gelasio/Gelasio%5Bwght%5D.ttf"
+          fc-cache -f
+          fc-match Gelasio
+          fc-match "Noto Sans"
+      - name: Render assets/og-image.png (1200x630)
+        run: |
+          set -euo pipefail
+          sed -e "s/Georgia, 'Times New Roman', serif/Gelasio/g" \
+              -e "s/system-ui, sans-serif/Noto Sans/g" \
+              assets/og-image.svg > /tmp/og.svg
+          rsvg-convert -w 1200 -h 630 /tmp/og.svg -o assets/og-image.png
+          python3 - <<'PY'
+          import struct
+          d = open('assets/og-image.png', 'rb').read()
+          assert d[:8] == b'\x89PNG\r\n\x1a\n', 'not a PNG'
+          w, h = struct.unpack('>II', d[16:24])
+          assert (w, h) == (1200, 630), (w, h)
+          print('ok', w, h, len(d), 'bytes')
+          PY
+      - name: Commit PNG and remove probe file
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/og-image.png
+          git rm -q --ignore-unmatch assets/_probe.png
+          if git diff --staged --quiet; then
+            echo unchanged
+          else
+            git commit -m "Add assets/og-image.png (1200x630, rendered from og-image.svg); remove unused _probe.png"
+            git push origin HEAD:quality-pass-2026-09
+          fi
