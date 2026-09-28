@@ -1,0 +1,52 @@
+name: Temporary - render apple-touch-icon.png
+# One-off: renders assets/favicon.svg to a 180x180 opaque PNG and commits it.
+# This file is deleted from the branch straight after it has run.
+on:
+  push:
+    branches: [review-pass-2026-09-28]
+    paths:
+      - '.github/workflows/apple-touch-icon.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: review-pass-2026-09-28
+      - name: Install rsvg-convert and Pillow
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq librsvg2-bin
+          pip install --quiet pillow
+      - name: Render assets/apple-touch-icon.png
+        run: |
+          set -euo pipefail
+          rsvg-convert -w 180 -h 180 -b '#1c1410' assets/favicon.svg -o /tmp/icon.png
+          python3 - <<'PY'
+          from PIL import Image
+          im = Image.open('/tmp/icon.png')
+          bg = Image.new('RGB', im.size, (0x1c, 0x14, 0x10))
+          bg.paste(im.convert('RGBA'), mask=im.convert('RGBA').split()[3])
+          assert bg.size == (180, 180), bg.size
+          bg.save('assets/apple-touch-icon.png', 'PNG', optimize=True)
+          chk = Image.open('assets/apple-touch-icon.png')
+          chk.verify()
+          chk = Image.open('assets/apple-touch-icon.png')
+          assert chk.size == (180, 180) and chk.mode == 'RGB', (chk.size, chk.mode)
+          print('ok', chk.size, chk.mode)
+          PY
+          ls -l assets/apple-touch-icon.png
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/apple-touch-icon.png
+          if git diff --staged --quiet; then
+            echo "unchanged"
+          else
+            git commit -m "Add assets/apple-touch-icon.png (180x180, opaque, rendered from favicon.svg)"
+            git push origin HEAD:review-pass-2026-09-28
+          fi
