@@ -208,7 +208,7 @@ p {
 
 .section-label {
   font-family: var(--sans);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -219,7 +219,7 @@ p {
 .tagline {
   display: inline-block;
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -419,7 +419,7 @@ li {
   margin: 0;
 }
 
-.reading-list a {
+.reading-list li > a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -432,6 +432,11 @@ li {
   font-size: 0.9rem;
   color: var(--ink-soft);
   padding-bottom: 0.35rem;
+}
+
+/* Inline link inside a reading-list note: bigger hit area, no layout shift */
+.reading-list span a {
+  padding: 0.6rem 0;
 }
 
 /* Buttons */
@@ -554,7 +559,7 @@ li {
 }
 
 .footer-heading {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
