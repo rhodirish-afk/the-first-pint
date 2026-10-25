@@ -322,6 +322,11 @@ p {
   white-space: nowrap;
 }
 
+/* At very large text sizes (em-based, so it follows user zoom), let the phrase wrap instead of overflowing */
+@media (max-width: 24em) {
+  .chalk-phrase { white-space: normal; }
+}
+
 /* Lists */
 ul,
 ol {
